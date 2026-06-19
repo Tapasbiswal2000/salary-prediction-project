@@ -22,31 +22,3 @@ CREATE TABLE prediction_logs(
     predicted_salary DECIMAL(10,2)
 );
 
-INSERT INTO employees
-(employee_name, age, experience, education, city, skill, salary)
-VALUES
-('Rahul',24,2,'Bachelors','Bangalore','Python',45000),
-('Priya',28,5,'Masters','Hyderabad','Python',85000),
-('Amit',29,5,'Masters','Pune','SQL',85000),
-('Neha',26,3,'Bachelors','Delhi','Power BI',60000),
-('Karan',32,8,'Masters','Mumbai','Machine Learning',120000);
-
-SELECT COUNT(*) AS total_employees
-FROM employees;
-
-SELECT AVG(salary) AS average_salary
-FROM employees;
-
-SELECT *
-FROM employees
-ORDER BY salary DESC
-LIMIT 1;
-
-SELECT employee_name,salary
-FROM employees
-WHERE salary >
-(
-    SELECT AVG(salary)
-    FROM employees
-);
-
